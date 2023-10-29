@@ -1,0 +1,29 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "zenom client", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local mTab = Window:MakeTab({
+    Name = "thug shaker",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+mTab:AddButton({
+    Name = "crash server loooool (spam button)",
+    Callback = function()
+              local args = {
+    [1] = CFrame.new(-1598.1336669921875, 399.6499328613281, -1085.1749267578125) * CFrame.Angles(-1.5707981586456299, -0.0000028999822916375706, -1.1887130737304688)
+}
+
+game:GetService("ReplicatedStorage").Events.PlaceSentry:FireServer(unpack(args))
+      end    
+})
+mTab:AddButton({
+    Name = "spam grenade",
+    Callback = function()
+  local args = {
+    [1] = Vector3.new(-226.14755249023438, 402.9181213378906, -1936.3096923828125),
+    [2] = 2.0625
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Frag Grenade").ServerMain.Throw:FireServer(unpack(args))
+  end
+})
+OrionLib:Init()
